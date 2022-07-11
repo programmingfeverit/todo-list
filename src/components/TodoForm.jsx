@@ -5,8 +5,8 @@ export default function TodoForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.setTodoList([...props.todoList, props.todo])
-    props.setTodo('')
+    props.setTodoList([...props.todoList, { text: props.todo, completed: false, id: Math.random() * 1000}])
+    props.setTodo("")
   }
 
   return (

@@ -6,12 +6,19 @@ import TodoList from "./components/TodoList";
 function App() {
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const [firstRender, setFirstRender] = useState(true);
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todo"));
+    if (todos) {
+      setTodoList(todos);
+      setFirstRender(false);
+    }
+  }, []);
 
   useEffect(() => {
-    //console.log(todo);
-  }, [todo]);
-  useEffect(() => {
-    //console.log(todoList);
+    if (!firstRender) {
+      localStorage.setItem("todo", JSON.stringify(todoList));
+    }
   }, [todoList]);
 
   return (
@@ -19,7 +26,6 @@ function App() {
       <div className="header">
         <h1>To-Do App</h1>
       </div>
-
       <TodoForm
         setTodo={setTodo}
         setTodoList={setTodoList}
