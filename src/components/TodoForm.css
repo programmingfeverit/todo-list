@@ -1,0 +1,31 @@
+.todo-form {
+  background-color: rgba(255, 166, 0, 0.13);
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+.todoInputBox {
+  background: rgb(245, 90, 0, 0.6);
+  font-size: 20px;
+  border-style: hidden;
+  width: 100%;
+  border-radius: 10px;
+}
+.todo-form {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+.todoInputBox {
+  flex: 1;
+  padding: 10px;
+}
+.btn-submit {
+  flex: 0 0 50px;
+  font-size: 20px;
+  padding: 10px;
+  width: fit-content;
+}
