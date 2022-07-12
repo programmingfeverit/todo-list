@@ -3,12 +3,26 @@ import './Todo.css'
 export default function Todo(props) {
 
     function handleDeleteClick() {
-        const indx = props.index;
+        //const indx = props.index;
+        // const indx = props.todos.map(obj => {
+        //     if (obj.id === props.arrId) {
+        //         return obj.id;
+        //     }
+        //     return
+        // });
 
+        var indx = props.todos.findIndex((itm) => itm.id === props.arrId)
+
+        //indx = indx[0]['id']
+
+        console.log(indx)
+
+        //return
         props.setTodoList([
             ...props.todos.slice(0, indx),
             ...props.todos.slice(indx + 1, props.todos.length),
         ]);
+
     }
 
     const updateState = (e) => {

@@ -32,6 +32,12 @@ function App() {
 
   useEffect(() => {
     const todos = JSON.parse(localStorage.getItem("todo"));
+
+    if (todos === null) {
+      localStorage.setItem("todo", JSON.stringify([]));
+      todos = JSON.parse(localStorage.getItem("todo"));
+    }
+
     setTodoList(todos);
     filterTodos("all");
   }, []);
