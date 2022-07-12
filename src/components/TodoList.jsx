@@ -19,7 +19,7 @@ export default function TodoList(props) {
     return (
         <div className='todo-list'>
             <div className="list-head">
-                {props.todoList.length > 0 ? <h1>To-Do's</h1> : <h1>No TO-DO's</h1>}
+                {props.filteredTodos.length > 0 ? <h1>To-Do's</h1> : <h1>No TO-DO's</h1>}
                 <Select onChange={statusHandler} options={options} defaultValue={options[0]} className="filter-cbo" />
             </div>
 
