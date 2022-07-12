@@ -17,8 +17,9 @@ export default function Todo(props) {
             // console.log(obj)
             //console.log('PROPS Index : ' + props.index)
             if (obj.id === props.arrId) {
-                console.log("meeeee")
-                console.log(e.target.checked)
+                //console.log(obj.id)
+                //  console.log(props.arrId)
+                //console.log(e.target.checked)
                 return { ...obj, completed: Boolean(e.target.checked) };
             }
 
@@ -31,8 +32,8 @@ export default function Todo(props) {
 
     return (
         <div className='todo-item'>
-            <input type="checkbox" checked={props.todos[props.index]['completed']} onChange={updateState} value={props.todos[props.index]['completed']} />
-            <p style={{ textDecoration: props.todos[props.index]['completed'] ? "line-through" : "none" }}>{props.text}</p>
+            <input type="checkbox" checked={props.filteredTodos[props.index]['completed']} onChange={updateState} />
+            <p style={{ textDecoration: props.filteredTodos[props.index]['completed'] ? "line-through" : "none" }}>{props.text}</p>
             <button className='delete-todo-btn' onClick={handleDeleteClick}>Delete</button>
         </div>
     )

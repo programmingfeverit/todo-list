@@ -10,3 +10,12 @@
   background: silver;
   border: none;
 }
+.list-head {
+  display: flex;
+}
+.list-head h1 {
+  flex: 1;
+}
+.filter-cbo{
+  flex: 0 200px;
+}
